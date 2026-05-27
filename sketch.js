@@ -1,27 +1,26 @@
 
-let G = 0.5;    // Gravitational Constant
-let K = 5.0;    // Electrostatic Constant
+let G = 0.5;//G
+let K = 5.0;//Coulombs consant
 let movers = [];
 let vectorfield = true;
 let gravityField = true; 
 let positive = true;
 let neutral = false;
-
-// --- RELATIVITY VARIABLES ---
 const SPEED_OF_LIGHT = 15.0; 
 
-// Camera variables
+//camera parameters
 let offsetx = 0;
 let offsety = 0;
 let zoom = 1.0;
 const ZOOM_SENSITIVITY = 0.001;
 const PAN_SPEED = 10; 
 
-// --- INTERACTION & LOCK VARIABLES ---
+//interaction status
 let lockedTarget = null; 
 let draggedTarget = null; 
 let isNewlyLocked = false; 
 
+//object count
 let count = 0;
 
 function setup() {
@@ -37,7 +36,7 @@ function draw() {
 
   cameraTracking();
 
-  // Render Simulation Space
+  //render space
   push();
   translate(width / 2, height / 2);
   scale(zoom);
@@ -46,7 +45,7 @@ function draw() {
   if (gravityField) drawGravityField();
   if (vectorfield) drawVectorField();
 
-  // Physics and collisions loop
+  //physics loop
   for (let i = movers.length - 1; i >= 0; i--) {
     for (let j = i - 1; j >= 0; j--) {
       let m1 = movers[i];
@@ -88,7 +87,7 @@ function draw() {
     }
   }
 
-  // --- PHYSICS LOOP: Calculates frame-dependent time steps ---
+  //relativistic calculation
   for (let mover of movers) {
     let dt = 1.0; 
 
@@ -352,7 +351,7 @@ function mousePressed() {
   let maxRenderedItems = min(movers.length, floor((height - 60) / 35));
   let dynamicHeight = 40 + maxRenderedItems * 35;
 
-  // Track panel interface interactions first
+  //check click on object menu
   if (mouseX > 10 && mouseX < 10 + menuWidth && mouseY > 10 && mouseY < 10 + dynamicHeight) {
     for (let i = 0; i < movers.length; i++) {
       let yPos = 45 + i * 35;
@@ -369,12 +368,12 @@ function mousePressed() {
     return; 
   }
 
-  // Calculate transformed workspace world coordinates
+  //calculate transformed coordinate
   let worldX = (mouseX - width / 2) / zoom + width / 2 - offsetx;
   let worldY = (mouseY - height / 2) / zoom + height / 2 - offsety;
   let mouseWorldPos = createVector(worldX, worldY);
 
-  // Check if mouse is down over an existing object to start dragging
+  //check drag
   let clickedObject = null;
   for (let m of movers) {
     let d = p5.Vector.dist(mouseWorldPos, m.position);
@@ -403,7 +402,7 @@ function mousePressed() {
 }
 
 function mouseReleased() {
-  // Clear dragging state on mouse release
+  //clear drag
   draggedTarget = null;
 }
 
