@@ -117,6 +117,9 @@ class Mover {
     if (this.history.length > this.maxTrailLength) {
       this.history.shift();
     }
+    if (this.justCreated > 0) {
+      this.justCreated--;
+    }
   }
   
   collisions(mover) {
