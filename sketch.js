@@ -441,20 +441,19 @@ function keyPressed(){
     let m = 200;      
     let dist = 180;   
     let vOrbit = sqrt((G * (m + m)) / dist) / 2; 
-    
-    // 先创建第一个
+
     let s1 = new Mover(m, 0, worldX - dist/2, worldY);
     s1.velocity = createVector(0, vOrbit);
     movers.push(s1);
     count++;
     
-    // 延迟创建第二个（避免同一帧碰撞）
+
     setTimeout(() => {
       let s2 = new Mover(m, 0, worldX + dist/2, worldY);
       s2.velocity = createVector(0, -vOrbit);
       movers.push(s2);
       count++;
-    }, 50);  // 50毫秒后创建
+    }, 50);
   }
 }
 
