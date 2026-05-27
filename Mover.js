@@ -120,6 +120,7 @@ class Mover {
   }
   
   collisions(mover) {
+    if (this.justCreated > 0 || mover.justCreated > 0) return false;
     return p5.Vector.dist(this.position, mover.position) < (this.r + mover.r);
   }
 }
