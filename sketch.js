@@ -439,15 +439,15 @@ function keyPressed(){
   }
   if (key === 'o') {
     let m = 200;      
-    let dist = 150;   
+    let dist = 300;    // 从 150 改成 300（距离加倍）
     let vOrbit = sqrt((G * (m + m)) / dist) / 2; 
-
+    
     let s1 = new Mover(m, 0, worldX - dist/2, worldY);
     s1.velocity = createVector(0, vOrbit);
     
     let s2 = new Mover(m, 0, worldX + dist/2, worldY);
     s2.velocity = createVector(0, -vOrbit);
-
+  
     movers.push(s1, s2);
     count += 2;
   }
