@@ -69,8 +69,7 @@ CEP-WA2/
 └── p5.sound.min.js # p5 sound library (optional)
 
 ## 🎥 Demo Video
-
-[YouTube Demo Link - 等会儿填]
+https://youtu.be/LHckYjDIhqY
 
 ## 📚 Acknowledgments
 - **The Nature of Code (Daniel Shiffman)** - Force and particle system architecture
