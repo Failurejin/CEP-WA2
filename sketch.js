@@ -438,8 +438,8 @@ function keyPressed(){
     zoom = 1.0;
   }
   if (key === 'o') {
-    let m = 200;      
-    let dist = 320;
+    let m = 50;      
+    let dist = 500;
     let vOrbit = sqrt((G * (m + m)) / dist) / 2; 
   
     let s1 = new Mover(m, 0, worldX - dist/2, worldY);
