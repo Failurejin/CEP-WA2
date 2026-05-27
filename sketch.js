@@ -443,10 +443,10 @@ function keyPressed(){
     let vOrbit = sqrt((G * (m + m)) / dist) / 2; 
   
     let s1 = new Mover(m, 0, worldX - dist/2, worldY);
-    s1.velocity = createVector(0, vOrbit);
+    s1.velocity = createVector(0, 2*vOrbit);
     
     let s2 = new Mover(m, 0, worldX + dist/2, worldY);
-    s2.velocity = createVector(0, -vOrbit);
+    s2.velocity = createVector(0, -2*vOrbit);
   
     movers.push(s1, s2);
     count += 2;
