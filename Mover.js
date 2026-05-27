@@ -8,6 +8,7 @@ class Mover {
     this.acceleration = createVector(0, 0); 
     this.history = [];//for throwing
     this.maxTrailLength = 20; //trail effect editable
+    this.justCreated = 10;
   }
 
   displayTrail() {//render trail
