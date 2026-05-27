@@ -4,8 +4,8 @@ CEP WA2
 
 An interactive physics simulation built with p5.js, combining Newtonian gravity, Coulomb electrostatics, and special relativistic time dilation.
 
-## 🚀 Live Demo
-[p5.js Editor Preview Link - 等会儿填]
+## 🚀 Try It Out!
+https://failurejin.github.io/CEP-WA2/
 
 ## 🎮 Controls
 
@@ -73,12 +73,8 @@ CEP-WA2/
 [YouTube Demo Link - 等会儿填]
 
 ## 📚 Acknowledgments
-
 - **The Nature of Code (Daniel Shiffman)** - Force and particle system architecture
-- **p5.js documentation** - Vector fields and camera system
-- **Special relativity formulas** - Lorentz factor γ = 1/√(1-v²/c²)
-- **Gravitational lensing visualization** - Inspired by Veritasium and PBS Space Time
-- **AI assistance** - Claude helped debug camera coordinate transform and dt parameter passing
+- **AI assistance** - Gemini helped debug camera coordinate transform and dt parameter passing
 
 ## 👤 Author
 
